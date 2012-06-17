@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Places</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<% unless logged_in? %>
+  
+<% else %>
+  Logged in as <%= link_to current_user.username, current_user %>
+  <%= link_to "Log out", session_path("current"), method: "delete" %>
+<%end%>
+
+
+<%= yield %>
+
+</body>
+</html>

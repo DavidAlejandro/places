@@ -1,0 +1,36 @@
+<h1><%= @user.username %> </h1>
+<%= flash[:warning] || flash[:notice] %>
+
+<ol>
+  <p>
+  -Email: <%= @user.email %>
+  </p>
+  
+  <% if current_user.id == @user.id %>
+  <%= link_to "Delete Account", @user, :method => :delete, :confirm => "Are you sure?" %>
+  
+  <%= link_to "Sign Out", log_out_path(@user) %>
+  <% end %>
+  
+ 
+</ol>
+
+
+<% if @user.places.present? %>
+  
+  <ol>
+  <h2> Places <%= @user.username %> has added! </h2>
+  <% @user.places.each do |place|%>
+    
+   <li>
+      <h3><%= link_to place.name, user_place_path(place, :user_id => place.user_id) %></h3> 
+    
+      <p>-<%= place.description %><p> 
+   </li>
+  <% end %>
+</ol>
+<% end %>
+
+<%= link_to "Add a place", new_user_place_path(:user_id => @user.id)  %>
+<%= link_to "Places", places_path %>
+<%= link_to "Update", edit_user_path(@user) %>

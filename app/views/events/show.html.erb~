@@ -1,0 +1,27 @@
+<h1><%= @event.name %> <h1>
+<h3><%= @event.description %></h3>
+<ol>
+  <p>
+  -Date: <%= @event.date %>
+  </p>
+  -Place: <%= (Place.find_by_id(@event.place_id)).name %>
+  <p>
+  
+  -Your rating: <% if @event.rating %>
+			<%= @event.rating %> 
+		<% else %>
+			<%= link_to "*", user_place_event_path(@event, :rating => 1), :method => :put %>
+			<%= link_to "*", user_place_event_path(@event, :rating => 2), :method => :put %>
+			<%= link_to "*", user_place_event_path(@event, :rating => 3), :method => :put %>
+			<%= link_to "*", user_place_event_path(@event, :rating => 4), :method => :put %>
+			<%= link_to "*", user_place_event_path(@event, :rating => 5), :method => :put %>
+	 	<% end %>
+   
+  </p>
+  <%if current_user.id == Place.find_by_id(@event.place_id).user_id %>
+  <%= link_to "Delete", @event, :method => :delete, :confirm => "Are you sure?" %>
+  <%= link_to "Update", edit_user_place_event_path(@event, :place_id => @event.place_id, :user_id => Place.find_by_id(@event.place_id).user_id ) %>
+  <% end %>
+</ol>
+<%= link_to "go to place", user_place_path(Place.find_by_id(@event.place_id), :user_id => Place.find_by_id(@event.place_id).user_id) %>
+

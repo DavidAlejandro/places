@@ -1,0 +1,204 @@
+  [1m[36m (0.4ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.3ms)[0m  DELETE FROM "events"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "events" ("name", "description", "date", "rating", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', 1, '2012-06-16 03:39:18', '2012-06-16 03:39:18', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "events" ("name", "description", "date", "rating", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', 1, '2012-06-16 03:39:18', '2012-06-16 03:39:18', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "places"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "places" ("name", "description", "adress", "phone", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', 'MyString', '2012-06-16 03:39:18', '2012-06-16 03:39:18', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "places" ("name", "description", "adress", "phone", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', 'MyString', '2012-06-16 03:39:18', '2012-06-16 03:39:18', 298486374)[0m
+  [1m[35m (98.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Processing by EventsController#create as HTML
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35mPlace Load (0.2ms)[0m  SELECT "places".* FROM "places" WHERE "places"."id" IS NULL LIMIT 1
+  Rendered events/_form.html.erb (41.9ms)
+  Rendered events/new.html.erb within layouts/application (47.3ms)
+Completed 500 Internal Server Error in 98ms
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT "events".* FROM "events" [0m
+Completed 200 OK in 6ms (Views: 4.0ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Processing by EventsController#new as HTML
+  [1m[35mPlace Load (0.2ms)[0m  SELECT "places".* FROM "places" WHERE "places"."id" IS NULL LIMIT 1
+  Rendered events/_form.html.erb (4.3ms)
+Completed 500 Internal Server Error in 6ms
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by HomeController#index as HTML
+Completed 200 OK in 3ms (Views: 2.8ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by PlacesController#create as HTML
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mPlace Exists (0.2ms)[0m  SELECT 1 FROM "places" WHERE "places"."name" = '' LIMIT 1
+  [1m[36mPlace Exists (0.1ms)[0m  [1mSELECT 1 FROM "places" WHERE "places"."adress" = '' LIMIT 1[0m
+  [1m[35mPlace Exists (0.1ms)[0m  SELECT 1 FROM "places" WHERE "places"."description" = '' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  Rendered places/_form.html.erb (4.8ms)
+Completed 200 OK in 32ms (Views: 8.3ms | ActiveRecord: 0.5ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Processing by PlacesController#index as HTML
+  [1m[35mPlace Load (0.2ms)[0m  SELECT "places".* FROM "places" 
+Completed 200 OK in 5ms (Views: 3.5ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Processing by PlacesController#new as HTML
+  Rendered places/_form.html.erb (3.9ms)
+Completed 200 OK in 7ms (Views: 5.9ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[36m (0.4ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "events"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "events" ("name", "description", "date", "rating", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', 1, '2012-06-16 03:54:36', '2012-06-16 03:54:36', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "events" ("name", "description", "date", "rating", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', 1, '2012-06-16 03:54:36', '2012-06-16 03:54:36', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "places"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "places" ("name", "description", "adress", "phone", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', 'MyString', '2012-06-16 03:54:37', '2012-06-16 03:54:37', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "places" ("name", "description", "adress", "phone", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', 'MyString', '2012-06-16 03:54:37', '2012-06-16 03:54:37', 298486374)[0m
+  [1m[35m (93.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Processing by EventsController#create as HTML
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35mPlace Load (0.2ms)[0m  SELECT "places".* FROM "places" WHERE "places"."id" IS NULL LIMIT 1
+  Rendered events/_form.html.erb (42.6ms)
+  Rendered events/new.html.erb within layouts/application (48.0ms)
+Completed 500 Internal Server Error in 98ms
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.3ms)[0m  [1mSELECT "events".* FROM "events" [0m
+Completed 200 OK in 11ms (Views: 8.1ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Processing by EventsController#new as HTML
+  [1m[35mPlace Load (0.2ms)[0m  SELECT "places".* FROM "places" WHERE "places"."id" IS NULL LIMIT 1
+  Rendered events/_form.html.erb (3.9ms)
+Completed 500 Internal Server Error in 5ms
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by HomeController#index as HTML
+Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by PlacesController#create as HTML
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mPlace Exists (0.2ms)[0m  SELECT 1 FROM "places" WHERE "places"."name" = '' LIMIT 1
+  [1m[36mPlace Exists (0.1ms)[0m  [1mSELECT 1 FROM "places" WHERE "places"."adress" = '' LIMIT 1[0m
+  [1m[35mPlace Exists (0.1ms)[0m  SELECT 1 FROM "places" WHERE "places"."description" = '' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  Rendered places/_form.html.erb (4.7ms)
+Completed 200 OK in 32ms (Views: 8.1ms | ActiveRecord: 0.5ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Processing by PlacesController#index as HTML
+  [1m[35mPlace Load (0.2ms)[0m  SELECT "places".* FROM "places" 
+Completed 200 OK in 5ms (Views: 3.5ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Processing by PlacesController#new as HTML
+  Rendered places/_form.html.erb (3.4ms)
+Completed 200 OK in 6ms (Views: 5.2ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[36m (0.4ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "events"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "events" ("name", "description", "date", "rating", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', 1, '2012-06-16 03:57:43', '2012-06-16 03:57:43', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "events" ("name", "description", "date", "rating", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', 1, '2012-06-16 03:57:43', '2012-06-16 03:57:43', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "places"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "places" ("name", "description", "adress", "phone", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', 'MyString', '2012-06-16 03:57:43', '2012-06-16 03:57:43', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "places" ("name", "description", "adress", "phone", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', 'MyString', '2012-06-16 03:57:43', '2012-06-16 03:57:43', 298486374)[0m
+  [1m[35m (99.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Processing by EventsController#create as HTML
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35mPlace Load (0.3ms)[0m  SELECT "places".* FROM "places" WHERE "places"."id" IS NULL LIMIT 1
+  Rendered events/_form.html.erb (42.5ms)
+  Rendered events/new.html.erb within layouts/application (48.1ms)
+Completed 500 Internal Server Error in 99ms
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.3ms)[0m  [1mSELECT "events".* FROM "events" [0m
+Completed 200 OK in 7ms (Views: 4.3ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Processing by EventsController#new as HTML
+  [1m[35mPlace Load (0.2ms)[0m  SELECT "places".* FROM "places" WHERE "places"."id" IS NULL LIMIT 1
+  Rendered events/_form.html.erb (3.9ms)
+Completed 500 Internal Server Error in 5ms
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Processing by HomeController#index as HTML
+Completed 200 OK in 3ms (Views: 2.8ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by PlacesController#create as HTML
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mPlace Exists (0.2ms)[0m  SELECT 1 FROM "places" WHERE "places"."name" = '' LIMIT 1
+  [1m[36mPlace Exists (0.1ms)[0m  [1mSELECT 1 FROM "places" WHERE "places"."adress" = '' LIMIT 1[0m
+  [1m[35mPlace Exists (0.1ms)[0m  SELECT 1 FROM "places" WHERE "places"."description" = '' LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  Rendered places/_form.html.erb (4.7ms)
+Completed 200 OK in 32ms (Views: 8.3ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+Processing by PlacesController#index as HTML
+  [1m[35mPlace Load (0.3ms)[0m  SELECT "places".* FROM "places" 
+Completed 200 OK in 5ms (Views: 3.7ms | ActiveRecord: 0.3ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Processing by PlacesController#new as HTML
+  Rendered places/_form.html.erb (3.4ms)
+Completed 200 OK in 6ms (Views: 5.1ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
